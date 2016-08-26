@@ -1,0 +1,63 @@
+{
+  "name": "backbone-form-validation",
+  "version": "1.0.0",
+  "description": "Backbone Models, Views and Collections for Form Clientside Validation Behaviour",
+  "main": "./dist/backbone-forms.js",
+  "scripts": {
+    "start": "mochify --transform [ babelify --presets [ es2015 ] ] -R spec --watch",
+    "phantom": "mochify --transform babelify -R spec",
+    "wd": "mochify --transform babelify --wd",
+    "cover": "mochify --plugin [ mochify-istanbul --report cobertura ]",
+    "test": "npm run phantom && npm run wd && npm run cover"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awylie199/backbone-form-validation.git"
+  },
+  "keywords": [
+    "JS",
+    "Javascript",
+    "Backbone",
+    "Forms"
+  ],
+  "author": "Alex Wylie <awylie199@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/awylie199/backbone-form-validation/issues"
+  },
+  "homepage": "https://github.com/awylie199/backbone-form-validation#readme",
+  "readme": "./README.md",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "dependencies": {
+    "babelify": "^7.3.0",
+    "backbone": "^1.3.3",
+    "form-serialize": "^0.7.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "babel-register": "^6.14.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "chai": "^3.5.0",
+    "chai-jquery": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-if": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "jquery": "^3.1.0",
+    "mochify": "^2.18.1",
+    "mochify-istanbul": "^2.4.1",
+    "sinon": "^1.17.5",
+    "subarg": "^1.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "yargs": "^5.0.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "source": {
+        "scripts": "src/"
+    },
+    "destination": {
+        "scripts": "dist/"
+    },
+    "tests": {
+        "js": "tests/"
+    }
+}
