@@ -10,7 +10,9 @@ describe('ModelFormRadioCheckbox', function() {
 
     before(function() {
 
-        checkboxRadioModel = new Model();
+        checkboxRadioModel = new Model({
+            type: 'radio'
+        });
 
     });
 
@@ -31,10 +33,11 @@ describe('ModelFormRadioCheckbox', function() {
 
         let $option = $('<input type="radio" value="one" checked="checked" />');
 
+        console.log($option);
+
         checkboxRadioModel.set('requiredNumber', 1);
         checkboxRadioModel.set('checkedOptions', $option);
 
-        checkboxRadioModel.set('min', 5);
         chai.expect(checkboxRadioModel.validate()).to.be.true;
 
     });

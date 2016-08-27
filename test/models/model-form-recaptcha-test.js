@@ -6,11 +6,25 @@ const Model = require('../../src/models/model-form-recaptcha');
 
 let recaptchaModel = {};
 
+global.grecaptcha = {
+    getResponse() {
+
+        return 'Success';
+
+    }
+};
+
 describe('ModelFormRecaptcha', function() {
 
     before(function() {
 
-        recaptchaModel = new Model();
+        recaptchaModel = new Model({
+            id: 'recaptcha-test-id'
+        });
+
+        global.recaptchaIds = {
+            'recaptcha-test-id': 123123
+        };
 
     });
 
@@ -27,7 +41,7 @@ describe('ModelFormRecaptcha', function() {
 
     });
 
-    it('should not validate completed recaptcha', function() {
+    it('should validate completed recaptcha', function() {
 
         chai.expect(recaptchaModel.validate()).to.be.true;
 

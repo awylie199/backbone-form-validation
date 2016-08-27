@@ -7,6 +7,7 @@ module.exports = function(model) {
 
     return Backbone.View.extend({
         model: model,
+        tagName: 'select',
         initialize() {
 
             _.bindAll(this, 'optionChange');

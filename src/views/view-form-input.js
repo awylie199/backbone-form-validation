@@ -10,19 +10,19 @@ module.exports = function(model) {
         tagName: 'input',
         initialize() {
 
-            _.bindAll(this, 'keydown');
+            _.bindAll(this, 'changeValue');
             this.listenToOnce(this.model, 'remove', this.remove);
 
         },
         events: {
-            change: 'keydown',
-            keyup: 'keydown'
+            change: 'changeValue',
+            keyup: 'changeValue'
         },
         /**
          * On change, update the Input's value
          * @return {void}
          */
-        keydown() {
+        changeValue() {
 
             this.model.set('value', this.$el.val());
 

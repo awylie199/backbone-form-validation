@@ -9,7 +9,6 @@ if (typeof global.BackboneModelForms === 'undefined') {
             input: require('./models/model-form-input'),
             inputEmail: require('./models/model-form-input-email'),
             inputPassword: require('./models/model-form-password'),
-            money: require('./models/model-form-money'),
             radioCheckbox: require('./models/model-form-radio-checkbox'),
             recaptcha: require('./models/model-form-recaptcha'),
             select: require('./models/model-form-select'),
@@ -17,7 +16,6 @@ if (typeof global.BackboneModelForms === 'undefined') {
         },
         views: {
             input: require('./views/view-form-input'),
-            inputMoney: require('./views/view-form-input-money'),
             select: require('./views/view-form-select')
         }
     };

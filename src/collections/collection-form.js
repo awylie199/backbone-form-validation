@@ -2,11 +2,9 @@
 
 'use strict';
 
-const serializer = require('form-serialize'),
-    Backbone = require('Backbone'),
-    _ = require('underscore');
-
-const $ = global.jQuery ? global.jQuery :
+const Backbone = require('Backbone'),
+    _ = require('underscore'),
+    $ = global.jQuery ? global.jQuery :
     (console.log('jQuery is not defined in the global scope.'), {});
 
 module.exports = function(Model) {
@@ -55,6 +53,8 @@ module.exports = function(Model) {
 
                 let inputModelErrors = inputModel.get('errorMessages'),
                     $inputModel = $(`#${inputModel.get('id')}`);
+
+                console.log($inputModel);
 
                 if (inputModelErrors.length) {
 
@@ -121,20 +121,6 @@ module.exports = function(Model) {
 
                 errorInfo.$input.after(errorInfo.errorsHTML);
 
-            });
-
-        },
-        /**
-         * Combine Signup and Immersion Forms for Submission
-         * @param {string}  formId   Form Element Id
-         * @return {Object}          Serialized Form Input
-         */
-        getSerializedData(formId) {
-
-            return serializer(document.getElementById(formId), {
-                hash: true,
-                disabled: true,
-                empty: false
             });
 
         }

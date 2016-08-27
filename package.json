@@ -4,10 +4,11 @@
   "description": "Backbone Models, Views and Collections for Form Clientside Validation Behaviour",
   "main": "./dist/backbone-forms.js",
   "scripts": {
-    "start": "mochify --transform [ babelify --presets [ es2015 ] ] -R spec --watch",
-    "phantom": "mochify --transform babelify -R spec",
-    "wd": "mochify --transform babelify --wd",
-    "cover": "mochify --plugin [ mochify-istanbul --report cobertura ]",
+    "start": "mochify --transform [ babelify --presets es2015 ] -R spec --watch",
+    "phantom": "mochify --transform [ babelify --presets es2015 ] -R spec",
+    "phantom-debug": "mochify --debug --transform [ babelify --presets es2015 ] -R spec",
+    "wd": "mochify --transform [ babelify --presets es2015 ] --wd",
+    "cover": "mochify --transform [ babelify --presets es2015 ]  --plugin [ mochify-istanbul --report cobertura ]",
     "test": "npm run phantom && npm run wd && npm run cover"
   },
   "repository": {
@@ -33,9 +34,7 @@
     ]
   },
   "dependencies": {
-    "babelify": "^7.3.0",
     "backbone": "^1.3.3",
-    "form-serialize": "^0.7.1",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
