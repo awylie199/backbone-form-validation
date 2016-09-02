@@ -23,9 +23,7 @@ gulp.task('esLint', function() {
 
     return gulp.src([
             `${config.source.scripts}**/*.js`,
-            `${config.tests.js}**/*.js`,
-            `!${config.tests.js}tmp/client-tests-build.js`,
-            `${config.source.backstop}**/*.js`
+            `${config.tests.js}**/*.js`
         ])
         .pipe(esLint())
         .pipe(esLint.format())
